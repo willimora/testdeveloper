@@ -1,0 +1,23 @@
+<div align="center">
+  <div class="col-md-5 col-sm-10 col-xs-12">
+    <mat-card class="mat-elevation-z8">
+      <mat-card-header>
+        <mat-card-title>{{producto.nombre}}</mat-card-title>
+      </mat-card-header>
+      <hr>
+      <div class="box"><img [src]="'assets/imagenes/' + producto.imagen"></div>
+      <hr>
+      <mat-card-content style="margin: 5%;">
+        <p style="font-size: 18px;"> Descripcion: {{producto.descripcion}}</p>
+        <p style="font-size: 18px;"> Precio: {{producto.precio}}</p>
+
+      </mat-card-content>
+
+      <mat-card-actions align="center">
+        <button mat-raised-button routerLink="/productos" color="primary">Volver</button>
+      </mat-card-actions>
+
+    </mat-card>
+
+  </div>
+</div>

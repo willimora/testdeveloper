@@ -1,0 +1,48 @@
+<div class="container" style="margin-top: 3%;">
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4"><button (click)="nuevoProducto()" mat-raised-button color="primary">Nuevo producto</button>
+    </div>
+  </div>
+  <div class="row" style="margin: 10px">
+    <div class="col-md-offset-4 col-md-4"><input type="text" class="form-control" placeholder="Filtrar"
+        name="filterProd" [(ngModel)]="filterProd"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-3 col-sm-4 col-xs-12" *ngFor="let prod of productos | productos:filterProd">
+
+      <mat-card class="mat-elevation-z8 example-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h3>{{prod.nombre}}</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <div class="box">
+          <img mat-card-image [src]="'assets/imagenes/' + prod.imagen">
+        </div>
+        <mat-card-content>
+          <div align="center"> {{prod.descripcion}}</div>
+
+        </mat-card-content>
+        <mat-card-actions align="center">
+          <button mat-mini-fab (click)="editarProducto(prod.id)" color="primary">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-mini-fab (click)="deleteOne(prod.id, prod.nombre)" style="background-color:red; color:white">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-mini-fab routerLink="{{prod.id}}">
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+
+
+
+  </div>
+</div>

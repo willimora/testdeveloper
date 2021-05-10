@@ -1,0 +1,14 @@
+
+.box img{
+  width: 100%;
+  height: auto;
+  object-position: center center;
+  object-fit: cover;
+  height: 100%;
+}
+
+.box{
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+}

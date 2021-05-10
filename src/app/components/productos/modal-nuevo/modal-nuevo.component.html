@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>{{ data?.title }}</h2>
+<div class="modal-form">
+  <form [formGroup]="ProductosForm">
+
+<div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" required>
+      <mat-error *ngIf="checkField('nombre')">
+        {{errorMessage}}
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="col">
+      <mat-form-field appearance="outline">
+        <mat-label>Descripcion</mat-label>
+      <input matInput formControlName="descripcion"  required>
+      <mat-error *ngIf="checkField('descripcion')">
+        {{errorMessage}}
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+    <div class="col">
+  <mat-form-field appearance="outline">
+    <mat-label>Precio</mat-label>
+  <input matInput type="number" formControlName="precio"  required>
+  <mat-error *ngIf="checkField('precio')">
+    {{errorMessage}}
+  </mat-error>
+</mat-form-field>
+</div>
+
+<div class="col" style="margin-bottom: 5%;">
+      <input type="file" (change)="onPhotoSelected($event)">
+    </div>
+
+  <div align="center"><button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="Guardar()" [disabled]="!ProductosForm.valid">Guardar</button></div>
+
+  </form>
+</div>
